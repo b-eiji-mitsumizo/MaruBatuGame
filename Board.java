@@ -43,7 +43,16 @@ public class Board {
 		return false;
 	}
 	
-	
+	public boolean startingPlaying(Player player){
+		System.out.println();
+		System.out.println(player.getName() + "さんの番です");
+		addKoma(player);
+		if(chcek_winner()) {
+			System.out.println(player.getName() + "さんの勝ちです");
+			return true;
+		}
+		return false;
+	}
 	
 	// TODO : マスに駒を置く関数
 	public void addKoma(Player turnPlayer){
