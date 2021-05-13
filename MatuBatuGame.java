@@ -9,16 +9,20 @@ public class MatuBatuGame {
 		
 		int count = 0;
 		boolean finish = false;
+		
 		while(count < 9) {
 			board.displayBoard();
-			board.startPlaying(count % 2 == 0 ? aPlayer : bPlayer);
 			
+			finish = board.startingPlaying(count % 2 == 0 ? aPlayer : bPlayer);
 			
-			
+			if(finish) {
+				break;
+			}
 			count++;
 		}
 		
 		if(count == 9) {
+			System.out.println();
 			System.out.println("引き分けです。");
 		}	
 		
